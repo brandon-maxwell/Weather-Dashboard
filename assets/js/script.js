@@ -21,7 +21,6 @@ submit.on("click", function (event) {
             $('#wind').text("Wind Speed: " + data['wind']['speed'] + "MPH");
 
             // uv index - also used 'dot' formating rather than bracket to reach data fetched
-
             var lat = data.coord.lat;
             var lon = data.coord.lon;
 
@@ -30,13 +29,13 @@ submit.on("click", function (event) {
                 .then(data => {
 
                     $('#UV').text(data.value);
-                    if(data.value <=2) {
+                    if (data.value <= 2) {
                         $('#UV').addClass("low")
                     }
-                    if(data.value >2 && data.value <=5) {
+                    if (data.value > 2 && data.value <= 5) {
                         $('#UV').addClass("moderate")
                     }
-                    if(data.value >5) {
+                    if (data.value > 5) {
                         $('#UV').addClass("severe")
                     }
                 })
@@ -73,7 +72,7 @@ submit.on("click", function (event) {
             $('#temp-five').text("Temperature: " + data['list'][32]["main"]["temp"] + " °F");
             $('#humidity-five').text("Humidity: " + data['list'][32]['main']['humidity'] + "%");
 
-            $('.history').append("<li class='list-group-item'>" + localStorage.getItem("city", city) + "</ul>");
+            $('.history').prepend("<li class='list-group-item'>" + localStorage.getItem("city", city) + "</ul>");
 
             $('.results').css("visibility", "visible");
             $('.history').css("visibility", "visible");
