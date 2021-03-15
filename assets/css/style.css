@@ -35,3 +35,15 @@
 .history {
     visibility: hidden;
 }
+
+.low {
+    background-color: green;
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.extreme {
+    background-color: red;
+}
